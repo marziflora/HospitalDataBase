@@ -45,10 +45,6 @@ podramka3=Frame(frame3)
 podramka3.pack(side=RIGHT)
 
 #wyświetlanie wyników z zapytań
-
-def akcja():
-    print("Wykonanie pierwszej akcji")
-
 def dodawaniedooddzialow():
     global e1, e2, e3, e4
     for widget in frame4.winfo_children():
@@ -94,7 +90,6 @@ def wstawianieoddzialow():
             print("Wszystko ok, dodano do tabeli oddziałów")
     except sqlite3.IntegrityError:
         print("Nie udało się dodać do tabeli - naruszona integralność")
-
     dodawaniedooddzialow()
 
 
@@ -275,8 +270,6 @@ def dodaniepacjentow():
     for item in a:
         listbox.insert(END, item)
 
-
-
 def wstawianiepacjentow():
     nr_pacjenta = e1.get()
     imie = e2.get()
@@ -307,10 +300,6 @@ def wstawianiepacjentow():
     for row in a:
         Label(frame3, text=row).pack()
     dodaniepacjentow()
-
-def przykladowe():
-    s = e1.get()
-    print(s)
 
 #zapytania z zad 5
 def zad1():
@@ -512,7 +501,6 @@ From pracownik JOIN pensja ON (pracownik.nr_pracownika=pensja.nr_pracownika) JOI
                        "END as placa From pracownik JOIN pensja ON \n "
                        "(pracownik.nr_pracownika=pensja.nr_pracownika) \n"
                        " JOIN lekarz ON (pracownik.nr_pracownika=lekarz.nr_lekarza);").pack()
-
 
 def zad7():
     for widget in frame4.winfo_children():
